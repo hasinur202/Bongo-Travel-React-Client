@@ -50,6 +50,25 @@ const AllBooking = () => {
         }
     }
 
+    // DELETE AN USER
+    const handleDeleteBooking = id => {
+        const proceed = window.confirm('Are you sure, you want to delete?');
+        if (proceed) {
+            const url = `https://bongo-travel.herokuapp.com/bookings/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    alert('deleted successfully');
+                    const remainingBookings = bookings.filter(book => book._id !== id);
+                    setBookings(remainingBookings);
+                }
+            });
+        }
+    }
+
     return (
         <section id="appointment" className="appointment section-bg">
             <div className="container" data-aos="fade-up">
@@ -79,11 +98,12 @@ const AllBooking = () => {
                                 </td>
                                 <td>
                                     {
-                                        book.status === 2 ? <button className="mr-2" onClick={() => handleApproveBooking(book._id)}>Approve</button> : 'N'
+                                        book.status === 2 ? <button className="mr-2" onClick={() => handleApproveBooking(book._id)}>Approve</button> : ''
                                     }
                                     {
-                                        book.status === 2 ? <button onClick={() => handleRejectBooking(book._id)}>Reject</button> : '/A'
+                                        book.status === 2 ? <button onClick={() => handleRejectBooking(book._id)}>Reject</button> : ''
                                     }
+                                    <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                         )

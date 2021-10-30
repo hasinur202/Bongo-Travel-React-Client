@@ -13,7 +13,6 @@ import MyBooking from './Pages/MyBooking/MyBooking';
 import Booking from './Pages/Booking/Booking';
 import AllBooking from './Pages/AllBooking/AllBooking';
 import Register from './Pages/Register/Register';
-import Gallery from './Pages/Gallery/Gallery';
 
 
 function App() {
@@ -46,9 +45,6 @@ function App() {
             </PrivateRoute>
             <PrivateRoute exact path="/manage-all-booking">
               <AllBooking></AllBooking>
-            </PrivateRoute>
-            <PrivateRoute exact path="/gallery">
-              <Gallery></Gallery>
             </PrivateRoute>
             <PrivateRoute path="/service-details/:_id">
               <ServiceDetails></ServiceDetails>

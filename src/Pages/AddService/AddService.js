@@ -34,6 +34,12 @@ const AddService = () => {
                         <div className="col-md-6 form-group mt-3 mt-md-0">
                             <input defaultValue="" {...register("img")} type="text" className="form-control" placeholder="Image Url" required />
                         </div>
+                        <div className="col-md-6 form-group">
+                            <input defaultValue="" {...register("price")} type="number" className="form-control" placeholder="Price (ex. 5000)" required />
+                        </div>
+                        <div className="col-md-6 form-group mt-3 mt-md-0">
+                            <input defaultValue="" {...register("time")} type="text" className="form-control" placeholder="Time (ex. 2 Days)" required />
+                        </div>
                         <div className="col-md-12 form-group mt-3 mt-md-0">
                             <input defaultValue="" {...register("short_description")} type="text" className="form-control" placeholder="Short Description" required />
                         </div>

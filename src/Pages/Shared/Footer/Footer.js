@@ -33,8 +33,8 @@ const Footer = () => {
                             <h4>Useful Links</h4>
                             <ul>
                                 <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#home">Home</Nav.Link></li>
-                                <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#services">Services</Nav.Link></li>
-                                <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#doctors">Doctors</Nav.Link></li>
+                                <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#services">Popular Tour</Nav.Link></li>
+                                <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#team">Our Team</Nav.Link></li>
                                 <li><i className="bx bx-chevron-right"></i><Nav.Link className="text-info" as={HashLink} to="/home#contact">Contact</Nav.Link></li>
                             </ul>
                         </div>

@@ -24,7 +24,7 @@ const MyBooking = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.updatedId > 0) {
+                    if (data.deletedCount > 0) {
                         alert('deleted successfully');
                         const remainingBookings = bookings.filter(book => book._id !== id);
                         setBookings(remainingBookings);
@@ -62,7 +62,7 @@ const MyBooking = () => {
                                 </td>
                                 <td>
                                     {
-                                        book.status === 2 ? <button onClick={() => handleDeleteBooking(book._id)}>X</button> : 'N/A'
+                                        book.status === 2 ? <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button> : 'N/A'
                                     }
                                 </td>
                             </tr>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Doctor = ({ expert }) => {
+const Member = ({ expert }) => {
     const { name, img, expertize } = expert;
     return (
         <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
@@ -8,10 +9,10 @@ const Doctor = ({ expert }) => {
                 <div className="member-img">
                     <img src={img} className="img-fluid" alt="" />
                     <div className="social">
-                    <a href="#"><i className="bi bi-twitter"></i></a>
-                    <a href="#"><i className="bi bi-facebook"></i></a>
-                    <a href="#"><i className="bi bi-instagram"></i></a>
-                    <a href="#"><i className="bi bi-linkedin"></i></a>
+                    <Link to="#"><i className="bi bi-twitter"></i></Link>
+                    <Link to="#"><i className="bi bi-facebook"></i></Link>
+                    <Link to="#"><i className="bi bi-instagram"></i></Link>
+                    <Link to="#"><i className="bi bi-linkedin"></i></Link>
                     </div>
                 </div>
                 <div className="member-info">
@@ -23,4 +24,4 @@ const Doctor = ({ expert }) => {
     );
 };
 
-export default Doctor;
+export default Member;

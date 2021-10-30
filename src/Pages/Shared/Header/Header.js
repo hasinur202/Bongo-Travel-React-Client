@@ -16,6 +16,7 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end text-white">
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#services">Tour</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#team">Our Team</Nav.Link>
                         {/* <Nav.Link as={HashLink} to="/tours">All Tours</Nav.Link> */}
                         {user.email &&
                             <Nav.Link as={HashLink} to="/add-tour">Add New Tour</Nav.Link>
@@ -24,9 +25,8 @@ const Header = () => {
                             <Nav.Link as={HashLink} to="/my-booking">My Booking</Nav.Link>
                         }
                         {user.email &&
-                            <Nav.Link as={HashLink} to="/manage-all-booking">Manage All Booking</Nav.Link>
+                            <Nav.Link as={HashLink} to="/manage-all-booking">Manage Booking</Nav.Link>
                         }
-                        {/* <Nav.Link as={HashLink} to="/gallery">Gallery</Nav.Link> */}
                         <Nav.Link style={{marginRight: '5px'}} as={HashLink} to="/home#contact">Contact</Nav.Link>
                         {/* <Nav.Link as={HashLink} to="/manage-tour"><span className="btn btn-success btn-sm d-md-inline">Manage <b>Tour</b></span></Nav.Link> */}
                         {user?.email ?
@@ -34,7 +34,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         }
                         { user.displayName && 
-                            <span className="mt-4"> Signed In as <div> {user?.displayName}</div></span>
+                            <span className="mt-4"> Signed In as <div className="text-success"> {user?.displayName}</div></span>
                         }
                     </Navbar.Collapse>
                 </Container>

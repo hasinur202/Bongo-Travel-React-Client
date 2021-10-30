@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     // const {service} = props;
-    const { _id, name, short_description, img } = service;
+    const { _id, name, short_description, img, price, time } = service;
     return (
         <>
         <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
@@ -18,8 +18,16 @@ const Service = ({ service }) => {
                     </div>
                 </div>
                 <div className="member-info">
-                    <h4 className="title">{name}</h4>
+                    <h3 className="title">{name}</h3>
                     <p className="description">{short_description}</p>
+                    <div className="d-flex p-3 bg-light border-bottom Price">
+                        <div className="col-lg-6 text-left">
+                           <h4> Price: <sup>TK. </sup>{price}</h4>
+                        </div>
+                        <div className="col-lg-6 text-right">
+                            <h4><i class="bi bi-clock"></i> {time}</h4>
+                        </div>
+                    </div>
 
                     <Link to={`/service-details/${_id}`}>
                         <button className="btn btn-success mt-3">Details</button>

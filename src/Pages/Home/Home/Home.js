@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import Contact from '../Contact/Contact';
-import Doctors from '../Doctors/Doctors';
+import Members from '../Members/Members';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
         <div id="home">
             <Banner></Banner>
             <Services></Services>
-            <Doctors></Doctors>
+            <Members></Members>
             <Contact></Contact>
         </div>
     );
