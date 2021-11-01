@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 
 const AllBooking = () => {
     const [bookings, setBookings] = useState({});
@@ -75,41 +76,45 @@ const AllBooking = () => {
                 <div className="section-title">
                     <h2>Manage Booking</h2>
                 </div>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">SL. No.</th>
-                            <th scope="col">Booking Id</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        bookings.length > 0 && bookings.map(book => <tr key={book._id}>
-                                <th scope="row">{sL = sL + 1}</th>
-                                <td>{book.tour_id}</td>
-                                <td>{book.email}</td>
-                                <td>{book.phone}</td>
-                                <td>
-                                   { book.status === 2 ? <span>Pending</span> : <span>Approved</span>}
-                                </td>
-                                <td>
-                                    {
-                                        book.status === 2 ? <button className="mr-2" onClick={() => handleApproveBooking(book._id)}>Approve</button> : ''
-                                    }
-                                    {
-                                        book.status === 2 ? <button onClick={() => handleRejectBooking(book._id)}>Reject</button> : ''
-                                    }
-                                    <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button>
-                                </td>
+                <div className="table-responsive">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">SL. No.</th>
+                                <th scope="col">Booking Id</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
-                        )
-                    }
-                    </tbody>
+                        </thead>
+                        <tbody>
+                        {
+                            bookings.length > 0 ? bookings.map(book => <tr key={book._id}>
+                                    <th scope="row">{sL = sL + 1}</th>
+                                    <td>{book.tour_id}</td>
+                                    <td>{book.email}</td>
+                                    <td>{book.phone}</td>
+                                    <td>
+                                    { book.status === 2 ? <span>Pending</span> : <span>Approved</span>}
+                                    </td>
+                                    <td>
+                                        {
+                                            book.status === 2 ? <button className="mr-2" onClick={() => handleApproveBooking(book._id)}>Approve</button> : ''
+                                        }
+                                        {
+                                            book.status === 2 ? <button onClick={() => handleRejectBooking(book._id)}>Reject</button> : ''
+                                        }
+                                        <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            )
+                            :
+                            <Spinner className="text-center" animation="border" variant="danger" />
+                        }
+                        </tbody>
                     </table>
+                </div>
             </div>
         </section>
     );

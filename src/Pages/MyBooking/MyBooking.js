@@ -39,37 +39,39 @@ const MyBooking = () => {
                 <div className="section-title">
                     <h2>My Booking List</h2>
                 </div>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">SL. No.</th>
-                            <th scope="col">Booking Id</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        bookings.length > 0 && bookings.map(book => <tr>
-                                <th scope="row">{sL = sL + 1}</th>
-                                <td>{book.tour_id}</td>
-                                <td>{book.email}</td>
-                                <td>{book.phone}</td>
-                                <td>
-                                   { book.status === 2 ? <span>Pending</span> : (book.status === 1 ? <span>Approved</span> : <span>Rejected</span>)}
-                                </td>
-                                <td>
-                                    {
-                                        book.status === 2 ? <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button> : 'N/A'
-                                    }
-                                </td>
+                <div className="table-responsive">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">SL. No.</th>
+                                <th scope="col">Booking Id</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
-                        )
-                    }
-                    </tbody>
+                        </thead>
+                        <tbody>
+                        {
+                            bookings.length > 0 && bookings.map(book => <tr>
+                                    <th scope="row">{sL = sL + 1}</th>
+                                    <td>{book.tour_id}</td>
+                                    <td>{book.email}</td>
+                                    <td>{book.phone}</td>
+                                    <td>
+                                    { book.status === 2 ? <span>Pending</span> : (book.status === 1 ? <span>Approved</span> : <span>Rejected</span>)}
+                                    </td>
+                                    <td>
+                                        {
+                                            book.status === 2 ? <button onClick={() => handleDeleteBooking(book._id)}><i className="fas fa-trash"></i></button> : 'N/A'
+                                        }
+                                    </td>
+                                </tr>
+                            )
+                        }
+                        </tbody>
                     </table>
+                </div>
             </div>
         </section>
     );

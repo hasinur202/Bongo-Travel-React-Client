@@ -33,7 +33,7 @@ const Banner = () => {
                 <Carousel.Caption>
                     <div className="slide-container">
                         <h2>Welcome to <span>BONGO TRAVEL</span></h2>
-                        <p className="text-white">BONGO TRAVEL, Dhaka, Bangladesh is one of the best Travel Agency Company. The hospital is a 150 beds and tertiary care facility, Many people can travelling with an affordable price.</p>
+                        <p className="text-white">BONGO TRAVEL, Dhaka, Bangladesh is one of the best Travel Agency Company. Many people can travelling with an affordable price.</p>
                         <button className="btn-get-started btn-info scrollto">Read More</button>
                     </div>
                 </Carousel.Caption>
